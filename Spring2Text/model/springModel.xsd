@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:springModel="http://www.example.org/springModel" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/springModel">
+    
+  <xsd:import namespace="http://www.omg.org/XMI" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/XMI.xsd"/>
+    
+  <xsd:complexType name="Application">
+        
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+            
+      <xsd:element name="controller" type="springModel:Controller"/>
+            
+      <xsd:element name="properties" type="springModel:Properties"/>
+            
+      <xsd:element ref="xmi:Extension"/>
+          
+    </xsd:choice>
+        
+    <xsd:attribute ref="xmi:id"/>
+        
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+        
+    <xsd:attribute name="name" type="xsd:string"/>
+      
+  </xsd:complexType>
+    
+  <xsd:element name="Application" type="springModel:Application"/>
+    
+  <xsd:complexType name="Controller">
+        
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+            
+      <xsd:element ref="xmi:Extension"/>
+          
+    </xsd:choice>
+        
+    <xsd:attribute ref="xmi:id"/>
+        
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+        
+    <xsd:attribute name="name" type="xsd:string"/>
+        
+    <xsd:attribute name="requestMapping" type="xsd:string"/>
+        
+    <xsd:attribute name="method" type="xsd:string"/>
+        
+    <xsd:attribute name="endPointPath" type="xsd:string"/>
+        
+    <xsd:attribute name="returnType" type="xsd:string"/>
+      
+  </xsd:complexType>
+    
+  <xsd:element name="Controller" type="springModel:Controller"/>
+    
+  <xsd:complexType name="Properties">
+        
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+            
+      <xsd:element name="property" type="springModel:Property"/>
+            
+      <xsd:element ref="xmi:Extension"/>
+          
+    </xsd:choice>
+        
+    <xsd:attribute ref="xmi:id"/>
+        
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+        
+    <xsd:attribute name="package" type="xsd:string"/>
+      
+  </xsd:complexType>
+    
+  <xsd:element name="Properties" type="springModel:Properties"/>
+    
+  <xsd:complexType name="Property">
+        
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+            
+      <xsd:element ref="xmi:Extension"/>
+          
+    </xsd:choice>
+        
+    <xsd:attribute ref="xmi:id"/>
+        
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+        
+    <xsd:attribute name="name" type="xsd:string"/>
+        
+    <xsd:attribute name="value" type="xsd:string"/>
+      
+  </xsd:complexType>
+    
+  <xsd:element name="Property" type="springModel:Property"/>
+  
+</xsd:schema>
